@@ -23,28 +23,33 @@ namespace SnakeandLadderProgram
             Random random = new Random();
             int player1 = random.Next(1, 7);
             int option1 = random.Next(1, 3);
-            if (pos1 == min && player1 != 6)
+
+            while (pos1 <= max)
             {
-                
-                Console.WriteLine("Position of player1:" + pos1);
-            }
 
-            else if (option1 == Play)
-            {
-                
-                pos1 += player1;
-                Console.WriteLine("Position of player1:" + pos1);
+                if (pos1 == min && player1 != 6)
+                {
+
+                    Console.WriteLine("Position of player1:" + pos1);
+                }
+
+                else if (option1 == Play)
+                {
+
+                    pos1 = pos1+ player1;
+                    Console.WriteLine("Position of player1:" + pos1);
 
 
 
-            }
+                }
 
-            else if (option1 == Snake)
-            {
-                
-                pos1 -= player1;
-                Console.WriteLine("Position of player1:" + pos1);
+                else if (option1 == Snake)
+                {
 
+                    pos1 = pos1 -player1;
+                    Console.WriteLine("Position of player1:" + pos1);
+
+                }
             }
 
 
