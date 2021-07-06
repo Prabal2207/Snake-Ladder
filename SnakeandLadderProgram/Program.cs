@@ -15,6 +15,7 @@ namespace SnakeandLadderProgram
         public static void SnakeLadder()
         {
             int pos1 = 0;
+            int pos2 = 0;
             int max = 100;
             int min = 0;
 
@@ -25,7 +26,7 @@ namespace SnakeandLadderProgram
 
             int Num_of_Times_Diceroll = 0;
 
-            while (pos1 < max)
+            while (pos1 < max && pos2 < max)
             {
 
                 int player1 = random.Next(1, 7);
@@ -69,13 +70,63 @@ namespace SnakeandLadderProgram
                     Console.WriteLine("Position of player1:" + pos1);
                 }
 
+                //player 2
+
+                if (pos2 == min && player2 != 6)
+                {
+                    Num_of_Times_Diceroll++;
+                    Console.WriteLine("Position of player2:" + pos2);
+
+
+                }
+                else if (option2 == Play)
+                {
+                    Num_of_Times_Diceroll++;
+                    pos2 += player2;
+
+
+                    if (pos2 > max)
+                    {
+                        pos2 = pos2 - player2;
+
+                    }
+                    Console.WriteLine("Position of player2:" + pos2);
+                }
+
+                else if (option2 == Snake)
+                {
+                    Num_of_Times_Diceroll++;
+                    pos2 -= player2;
+
+
+
+
+                    if (pos2 < min)
+                    {
+                        pos2 = 0;
+
+                    }
+                    Console.WriteLine("Position of player2:" + pos2);
+                }
+
+
             }
-            Console.WriteLine("Number of Dice Roll=" + Num_of_Times_Diceroll);
-
-
+            if (pos1 == max)
+            {
+                Console.WriteLine("Player 1 won");
+                Console.WriteLine("Number of Dice Roll=" + Num_of_Times_Diceroll);
+            }
+            else if (pos2 == max)
+            {
+                Console.WriteLine("Player 2 won");
+                Console.WriteLine("Number of Dice Roll=" + Num_of_Times_Diceroll);
+            }
 
         }
 
+
     }
+
 }
+
  
