@@ -15,6 +15,9 @@ namespace SnakeandLadderProgram
         public static void SnakeLadder()
         {
             int pos1 = 0;
+            Random random = new Random();
+            int player1 = random.Next(1, 7);
+            Console.WriteLine(player1);
         }
        
     }
