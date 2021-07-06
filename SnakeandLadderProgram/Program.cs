@@ -7,7 +7,14 @@ namespace SnakeandLadderProgram
         static void Main(string[] args)
         {
             Console.WriteLine("SnakeandLadder Implementation");
-            
+            SnakeLadder();
+
+
+        }
+
+        public static void SnakeLadder()
+        {
+            int pos1 = 0;
         }
        
     }
